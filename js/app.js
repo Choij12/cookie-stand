@@ -15,35 +15,43 @@ const seattle = {
         for (let i =0; i < 14; i += 1) {
             let averageCust = seattle.aveCustomer * seattle.averageCookie;
             console.log() 
+        }
     }
-}
 }
 
 
 const tokyo = {
+    city: 'Tokyo',
     minCustomer: 3,
     maxCustomer: 24,
-    aveCustomer: customerPerHour,
-    aveCookie: 1.2
+    aveCustomer: aveCustomer,
+    averageCookie: 1.2
 }
 
 const dubai = {
+    city: 'Dubai',
     minCustomer: 11,
     maxCustomer: 38,
-    aveCustomer: customerPerHour,
-    aveCookie: 3.7
+    aveCustomer: aveCustomer,
+    averageCookie: 3.7
 }
 
 const paris = {
+    city: 'Paris',
     minCustomer: 20,
     maxCustomer: 38,
-    aveCustomer: customerPerHour,
-    aveCookie: 2.3
+    aveCustomer: aveCustomer,
+    averageCookie: 2.3
 }
 
 const lima = {
+    city: 'Lima',
     minCustomer: 2,
     maxCustomer: 16,
-    aveCustomer: customerPerHour,
-    aveCookie: 4.6
+    aveCustomer: aveCustomer,
+    averageCookie: 4.6
+}
+
+for (i=0; i < 14; i++) {
+    seattle.getAverage
 }
