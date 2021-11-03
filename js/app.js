@@ -1,57 +1,78 @@
-'use strict'
+`use strict`
 
-function randomCustPerHour(min, max) {
-    let range = max - min +1;
-    return Math.foor(Math.random() * range) + min;
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let city = [];
+let tbl;
+
+function CookieStand(name, minCustomer, maxCustomer, avgCustomer) {
+    this.name = name;
+    this.minCustomer = minCustomer;
+    this.maxCustomer = maxCustomer;
+    this.avgCustomer = avgCustomer;
+    this.avgCookies = avgCookies;
+    this.hourlyCookies = [];
+    this.dailyCookies = 0;
+    shops.push(this);
+
+    CookieStand.generateHourly(this);
+    CookieStand.renderCity(tbl, this)
 }
 
-const seattle = {
-    city: 'Seattle',
-    minCustomer: 23,
-    maxCustomer: 65,
-    averageCookie: 6.3,
-    operationHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
-    aveCustomer: function() {
-        for (let i =0; i < 14; i += 1) {
-            let averageCust = seattle.aveCustomer * seattle.averageCookie;
-            console.log() 
-        }
+CookieStand.prototype.generateRandom = function(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+const seattle = new CookieStand('Seattle', 23, 65, 6.3)
+const tokyo = new CookieStand('Tokyo', 3, 24, 1.2)
+const dubai = new CookieStand('Dubai', 11, 38, 3.7)
+const paris = new CookieStand('Paris', 20, 38, 2.3)
+const lima = new CookieStand('Lima', 2, 16, 4.6)
+
+CookieStand.hourlyCookies = function () {
+    for (let i = 0; i < this.hours.length; i +=1) {
+        let avgCustomer = Math.floor.avgCustomer * generateRandom.minCustomer, maxCustomer;
+ }
+}
+
+CookieStand.renderCity = function(tbl, city) {
+    let trEl_two = document.createElement('tr');
+    let thEl_four = document.createElement('th');
+    thEl_four.textContent = city.name;
+    trEl_two.id = city.id;
+    trEl_two.appendChild(thEl_four);
+
+    for (let i = 0; i < hours.length; j++) {
+      let tdEl_one = document.createElement('td');
+      tdEl_one.textContent = city.hourlyCookies[j];
+      trEl_two.appendChild(tdEl_one);
     }
-}
 
+    var tdEl_two = document.createElement('td');
+    tdEl_two.textContent = city.dailyCookies;
+    trEl_two.appendChild(tdEl_two);
 
-const tokyo = {
-    city: 'Tokyo',
-    minCustomer: 3,
-    maxCustomer: 24,
-    aveCustomer: aveCustomer,
-    averageCookie: 1.2
-}
+    tbl.appendChild(trEl_two);
+};
 
-const dubai = {
-    city: 'Dubai',
-    minCustomer: 11,
-    maxCustomer: 38,
-    aveCustomer: aveCustomer,
-    averageCookie: 3.7
-}
+(CookieStand.renderTable = function() {
+  tbl = document.createElement('table');
+  tbl.id = 'table';
+  var trEl_one = document.createElement('tr');
+  var thEl_one = document.createElement('th');
+  thEl_one.textContent = '';
+  trEl_one.appendChild(thEl_one);
 
-const paris = {
-    city: 'Paris',
-    minCustomer: 20,
-    maxCustomer: 38,
-    aveCustomer: aveCustomer,
-    averageCookie: 2.3
-}
+  for (var i = 0; i < hours.length; i++) {
+    var thEl_two = document.createElement('th');
+    thEl_two.textContent = hours[i];
+    trEl_one.appendChild(thEl_two);
+  }
 
-const lima = {
-    city: 'Lima',
-    minCustomer: 2,
-    maxCustomer: 16,
-    aveCustomer: aveCustomer,
-    averageCookie: 4.6
-}
+  var thEl_three = document.createElement('th');
+  thEl_three.textContent = 'Totals';
+  trEl_one.appendChild(thEl_three);
 
-for (i=0; i < 14; i++) {
-    seattle.getAverage
-}
+  tbl.appendChild(trEl_one);
+
+  document.getElementById('city_data').appendChild(tbl);
+})();
