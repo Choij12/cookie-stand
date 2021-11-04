@@ -1,0 +1,47 @@
+body {
+    background-color: blanchedalmond;
+}
+.highlights {
+    font-size: 5em;
+    font-family: 'Times New Roman', Times, serif;
+    color: coral;
+}
+#Salmon {
+    background-image: url(images/Salmon.png);
+}
+table{
+    height: 375px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+main{
+    display: inline-flex;
+    position: absolute;
+    top: 25%;
+    left:5%;
+    width: 100vw;
+    max-height: 310px;
+    }
+th{
+    border: black;
+    padding: 5px;
+}
+td{
+    border: black;
+    padding:5px;
+    text-align:center;
+}
+tr{
+    border: black;
+    padding:5px;
+}
+form{
+    height:200px;
+    position:relative;
+    top: 11px;
+    left: 0%;
+    margin-right: 60px;
+    }
+input{
+    display: flex;
+    margin-top: 20px;
+}

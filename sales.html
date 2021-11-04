@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Sale's Page</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header> 
+        <nav>Cookies Menu</nav>
+        <nav>Apparel</nav>
+        <nav>Contact</nav>
+    </header>
+    <heading id='salesHeading'>
+      <h1>Salmon Cookies Sales Page</h1>
+      
+   </heading>
+    <main>
+      
+    <table id="sales">
+    </table>  
+      
+      <form id="newStoreForm">
+        
+        <fieldset>
+          <legend>Add A Store</legend>
+          
+          <label for="location">Store Location</label>
+          <input type="text" name="locationName" required>
+          <label for="minCust">Min Customers</label>
+          <input type="number" name="minCustomer" required>
+          <label for="maxCust">Max Customers</label>
+          <input type="number" name="maxCustomer" required>
+          <label for="avgPurchse">Avg Cookies Purchased</label>
+          <input type="number" step="0.1" name="avgPurch" required>
+          <input type="submit" name="submit" value="Add New Store">
+        </fieldset>
+      </form>
+      
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
