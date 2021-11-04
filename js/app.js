@@ -1,6 +1,5 @@
 `use strict`
 
-
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let city = [];
 let tbl;
@@ -13,10 +12,24 @@ function CookieStand(name, minCustomer, maxCustomer, avgCustomer) {
     this.avgCookies = avgCookies;
     this.hourlyCookies = [];
     this.dailyCookies = 0;
-    shops.push(this);
+    city.push(this);
+    this.generateHourlySales();
 
     CookieStand.generateHourly(this);
     CookieStand.renderCity(tbl, this)
+}
+
+CookieStand.prototype.generateHourlySales = function () {
+
+    for(let i = 0; i< hours.length; i +=1) {
+        const rando = Math.random
+    }
+    const absCustomerRange = this.maxCustomer - this.minCustomer + 1;
+    const randomCustomerCount = Math.floor(Math.random () * absCustomerRange);
+    const adjustedCustomerCount = randomCustomerCount + this.minCustomer;
+    const estimatedSales = Math.ceil(adjustedCustomerCount * this.avgSales);
+    this.salesPerhour.push(estimatedSales);
+
 }
 
 CookieStand.prototype.generateRandom = function(min, max) {
@@ -29,11 +42,27 @@ const dubai = new CookieStand('Dubai', 11, 38, 3.7)
 const paris = new CookieStand('Paris', 20, 38, 2.3)
 const lima = new CookieStand('Lima', 2, 16, 4.6)
 
-CookieStand.hourlyCookies = function () {
-    for (let i = 0; i < this.hours.length; i +=1) {
-        let avgCustomer = Math.floor.avgCustomer * generateRandom.minCustomer, maxCustomer;
- }
+
+const stands = [seattle, tokyo, dubai, paris, lima];
+
+const hourlyTotals = [];
+
+for(let hourlyIndex = 0; hourlyIndex < hours.length; hourlyIndex+=1) {
+
+    const timeSlot = hours[hourlyIndex];
+
+    let hourlySalesTotal = 0;
+
+    for(let standIndex = 0; standIndex < stands.length; standIndex += 1) {
+
+        const currentStand = stands[standIndex];
+
+        const hourlySalesforCurrentStand = currentStand.salesperHour[hourlyIndex];
+
+        hourlySalesTotal += hourlySalesforCurrentStand;
+    }
 }
+
 
 this.displayData = function() {
     this.calcHourlySales();
