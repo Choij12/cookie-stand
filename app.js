@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 const hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
 let allStands = [];
 
@@ -21,7 +19,6 @@ let tableEl = document.querySelector("table");
 Stand.prototype.cookiesPerHour = function () {
   return Math.floor((Math.random() * ((this.maxCustomer - this.minCustomer)+1) + this.minCustomer) * this.avgPurchase);
 };
-
 
 Stand.prototype.cookiesPerDay = function (){
   for (let i = 0; i < hours.length; i++){
@@ -85,14 +82,11 @@ function finalRow(){
   tableEl.appendChild(totalTD);
 }
 
-
-
 let seattle = new Stand('Seattle', 23, 65, 6.3);
 let tokyo = new Stand('Tokyo', 3, 24, 1.2);
 let dubai = new Stand('Dubai', 11, 38, 3.7);
 let paris = new Stand('Paris', 20, 38, 2.3);
 let lima = new Stand('Lima', 2, 16, 4.6);
-
 
 seattle.cookiesPerHour();
 seattle.cookiesPerDay();
@@ -109,17 +103,11 @@ paris.cookiesPerDay();
 lima.cookiesPerHour();
 lima.cookiesPerDay();
 
-
-
 createTable();
 finalRow();
 
 let formEl = document.getElementById("newStoreForm");
 formEl.addEventListener('submit', submitForm);
-
-//make variable for form element
-
-
 
 function submitForm(formSubmission){
   formSubmission.preventDefault();
